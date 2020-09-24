@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertestapp/view_model/SecondScreen.dart';
 import 'package:fluttertestapp/view_model/counter.dart';
-import 'utils/NavigationService.dart';
-import 'utils/locator.dart';
+import 'navigator/NavigationService.dart';
+import 'navigator/locator.dart';
 
 void main() {
   setupLocator();
@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.green,
       ),
+
       navigatorKey: locator<NavigationService>().navigatorKey,
       routes: {
         '/': (context) => MyScreen(),

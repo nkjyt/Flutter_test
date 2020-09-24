@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
-import 'package:fluttertestapp/utils/NavigationService.dart';
-import 'package:fluttertestapp/utils/locator.dart';
+import 'package:fluttertestapp/navigator/NavigationService.dart';
+import 'package:fluttertestapp/navigator/locator.dart';
 
 class MyScreenViewModel extends ChangeNotifier {
   int _someValue = 0;
