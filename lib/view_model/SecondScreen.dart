@@ -1,9 +1,8 @@
 import 'package:stacked/stacked.dart';
 import 'package:flutter/material.dart';
-import 'counter_model.dart';
+import 'SecondScreenModel.dart';
 
-
-class MyScreen extends StatelessWidget {
+class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<MyScreenViewModel>.reactive(
@@ -11,30 +10,18 @@ class MyScreen extends StatelessWidget {
       onModelReady: (model) => model.loadData(),
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(
-          title: Text("view model test"),
+          title: Text('Second screen'),
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                "Pushed:"
-              ),
-              Text(
-                "${model.someValue}",
-                style: Theme.of(context).textTheme.display1,
-              )
+
             ],
           ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: ()=>model.navigateNextPage(),
-          tooltip: 'Increment',
-          child: Icon(Icons.add),
         ),
         // your widget tree
       ),
     );
   }
 }
-

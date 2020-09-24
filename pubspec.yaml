@@ -24,7 +24,10 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
 
+# for MVVM
   stacked: ^1.6.0
+# for viewModel Navigator
+  get_it: ^4.0.1
 
 
 dev_dependencies:

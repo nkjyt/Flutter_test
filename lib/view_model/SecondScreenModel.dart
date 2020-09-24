@@ -9,14 +9,11 @@ class MyScreenViewModel extends ChangeNotifier {
     // do initialization...
     notifyListeners();
   }
-  incrementValue() {
-    _someValue++;
-    notifyListeners();
-  }
   void navigateNextPage() {
     final NavigationService _navigationService = locator<NavigationService>();
     _navigationService.navigateTo("/second");
   }
+
   void doSomething() {
     // do something...
     notifyListeners();

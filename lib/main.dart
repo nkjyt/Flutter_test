@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertestapp/view_model/SecondScreen.dart';
+import 'package:fluttertestapp/view_model/counter.dart';
+import 'utils/NavigationService.dart';
+import 'utils/locator.dart';
 
-void main() => runApp(MyApp());
-
+void main() {
+  setupLocator();
+  runApp(MyApp());
+}
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -20,7 +26,12 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.green,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      navigatorKey: locator<NavigationService>().navigatorKey,
+      routes: {
+        '/': (context) => MyScreen(),
+        '/second': (context) => SecondScreen(),
+      },
+      initialRoute: '/',
     );
   }
 }
