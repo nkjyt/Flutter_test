@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertestapp/memo/home_screen/HomeScreen.dart';
+import 'package:fluttertestapp/memo/write_screen/WriteScreen.dart';
 import 'package:fluttertestapp/view_model/SecondScreen.dart';
 import 'package:fluttertestapp/view_model/counter.dart';
 import 'navigator/NavigationService.dart';
@@ -29,8 +31,10 @@ class MyApp extends StatelessWidget {
 
       navigatorKey: locator<NavigationService>().navigatorKey,
       routes: {
-        '/': (context) => MyScreen(),
+        //'/': (context) => MyScreen(),
         '/second': (context) => SecondScreen(),
+        '/': (context) => HomeScreen(),
+        '/write': (context) => WriteScreen(),
       },
       initialRoute: '/',
     );
