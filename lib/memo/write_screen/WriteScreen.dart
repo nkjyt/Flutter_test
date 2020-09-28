@@ -11,14 +11,30 @@ class WriteScreen extends StatelessWidget {
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(
           title: Text('add new memo'),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('Finish'),
+              onPressed: () => model.unfocusNode(),
+            )
+          ],
         ),
         body: Container(
           padding: EdgeInsets.all(12.0),
+
           child: TextField(
+            focusNode: model.focusNode,
+
             decoration: InputDecoration(
+              focusColor: Colors.green,
               hintText: "Input memo",
+              border: InputBorder.none
             ),
+
             maxLines: null,
+            onChanged: (s) => {},
+            style: TextStyle(
+              fontSize: 24.0
+            ),
           ),
 
         ),
