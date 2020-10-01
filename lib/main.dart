@@ -1,13 +1,19 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertestapp/firebase_test/AuthScreen.dart';
+import 'package:fluttertestapp/firebase_test/Firestore_test.dart';
 import 'package:fluttertestapp/memo/home_screen/HomeScreen.dart';
 import 'package:fluttertestapp/memo/write_screen/WriteScreen.dart';
 import 'package:fluttertestapp/view_model/SecondScreen.dart';
 import 'package:fluttertestapp/view_model/counter.dart';
 import 'navigator/NavigationService.dart';
 import 'navigator/locator.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
   setupLocator();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 class MyApp extends StatelessWidget {
@@ -35,6 +41,8 @@ class MyApp extends StatelessWidget {
         '/second': (context) => SecondScreen(),
         '/': (context) => HomeScreen(),
         '/write': (context) => WriteScreen(),
+        '/Auth': (context) => AuthScreen(),
+        '/firebase': (context) => FirestoreTest()
       },
       initialRoute: '/',
     );
